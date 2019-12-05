@@ -81,6 +81,7 @@ evaluate_depth <- function(data, halfspaces, metric = c("mass", "depth")) {
   mass_right <- halfspaces[["mass_right"]]
 
   data <- validate_data(data)
+  metric <- match.arg(metric, c("mass", "depth"))
 
   # make sure dimensions are equal between training and test data
   if (ncol(data) != ncol(directions)) {
